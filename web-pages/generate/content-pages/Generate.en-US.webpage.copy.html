@@ -1,0 +1,285 @@
+
+  <style>
+        /* Custom CSS to style the loader modal */
+        #loader-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5); /* Semi-transparent background overlay */
+            z-index: 9998; /* Place it behind the loader */
+        }
+
+        #loader {
+            display: none;
+            background: rgba(0, 0, 0, 0.5); /* Background color for the loader */
+            border-radius: 4px;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 9999;
+            padding: 20px;
+            text-align: center;
+        }
+        .text-danger{
+          color: darkred;
+          font-size: 20px
+        }
+        
+
+        #loader p {
+            margin-top: 10px;
+            color: #000; /* Customize text color */
+        }
+    </style>
+
+
+<div class="container" style="padding: 0px; display: flex; flex-wrap: wrap; margin-top: 30px;">
+
+  <h2 style="text-align: left; margin-left: 14px;">Claimant Information&nbsp;</h2>
+
+</div>
+<div id="loader" class="modal" tabindex="-1" role="alert">
+  <div class="modal-dialog text-center" role="document">
+      <div class="modal-content">
+          <div class="modal-body">
+            <div class="spinner-border text-primary" role="status">
+              <span class="sr-only">Loading...</span>
+            </div>
+              <p>Loading...</p>
+          </div>
+      </div>
+  </div>
+</div>
+<div class="row sectionBlockLayout text-left"
+  style="display: flex; flex-wrap: wrap; margin: 0px; min-height: auto; padding: 8px;">
+  <div class="container" style="display: flex; flex-wrap: wrap;">
+    <div class="col-md-4 columnBlockLayout"
+      style="flex-grow: 1; display: flex; flex-direction: column; min-width: 250px; word-break: break-word; padding: 16px; margin: 20px 0px;">
+      <div class="form-group" id="claimant_first_name_group">
+        <label for="claimant_first_name">Claimant First Name <span class="text-danger">*</span></label>
+        <input type="text" class="form-control" id="claimant_first_name" name="claimant_first_name"
+          style="border: 1px solid rgba(58, 98, 175, 1); padding: 10px;" />
+      </div>
+      <div class="form-group">
+        <label for="claimant_pronoun">Pronoun</label>
+        <select name="claimant_pronoun" id="claimant_pronoun" class="form-control"
+          style="border: 1px solid rgba(58, 98, 175, 1);">
+          <option value="Mr.">Mr</option>
+          <option value="Mrs.">Mrs</option>
+          <option value="Master.">Master</option>
+          <option value="Miss.">Miss</option>
+          <option value="They.">They</option>
+          <option value="Ms.">Ms</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="claimant_confirmation_of_id_type">Confirmation of ID Type</label>
+        <select name="claimant_confirmation_of_id_Type" id="claimant_confirmation_of_id_Type" class="form-control"
+          style="border: 1px solid rgba(58, 98, 175, 1);">
+          <option value="Driving License">Driving License</option>
+          <option value="Health Card">Health Card</option>
+          <option value="Birth Certificate">Birth Certificate</option>
+          <option value="Passport">Passport</option>
+          <option value="Other">Other</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="claimant_bundle_type">Bundle Type</label>
+        <select name="claimant_bundle_type" class="form-control" id="claimant_bundle_type"
+          style="border: 1px solid rgba(58, 98, 175, 1);">
+          <option value="Multidisciplinary Assessment">Multidisciplinary Assessment</option>
+          <option value="Single Assessment">Single Assessment</option>
+        </select>
+      </div>
+      <div class="form-group" id="assessment_location_group">
+        <label for="assessment_location">Assessment Location <span class="text-danger">*</span></label>
+        <input type="text" class="form-control" style="border: 1px solid rgba(58, 98, 175, 1);" id="assessment_location"
+          name="assessment_location" />
+      </div>
+      <div class="form-group">
+        <label for="insurance_company">Insurance Company</label>
+        <select name="insurance_company" id="insurance_company" class="form-control"
+          style="border: 1px solid rgba(58, 98, 175, 1);">
+          <!-- <option value="Intact">Intact</option> -->
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="document_in_dispute">Document in Dispute</label>
+        <select name="document_in_dispute"  id="document_in_dispute" class="form-control" style="border: 1px solid rgba(58, 98, 175, 1);">
+          <option value="Not Applicable">Not Applicable</option>
+          <option value="OCF-18,DATE,Amount($)">OCF-18, DATE, Amount ($)</option>
+        </select>
+      </div>
+      <div class="form-group" id="claimant_claim_number_group">
+        <label for="claimant_claim_number" >Claim Number <span class="text-danger">*</span></label>
+        <input type="text" class="form-control" id="claimant_claim_number" name="claimant_claim_number"
+          style="border: 1px solid rgba(58, 98, 175, 1); " />
+      </div>
+      <div class="form-group">
+        <label for="report_type">Report Type</label>
+        <select id="report_type" name="report_type" class="form-control"
+          style="border: 1px solid rgba(58, 98, 175, 1); ">
+          <option value="Transcription">Transcription</option>
+          <option value="Notes">Notes</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="language_interpreter_present">Was a Language Interpreter Present for the
+          Assessment</label>
+        <select name="language_interpreter_present"
+          id="language_interpreter_present" class="form-control"
+          style="border: 1px solid rgba(58, 98, 175, 1);">
+          <option value="Yes">Yes</option>
+          <option value="No">No</option>
+        </select>
+      </div>
+    </div>
+    <div class="col-md-4 columnBlockLayout"
+      style="flex-grow: 1; display: flex; flex-direction: column; min-width: 250px; word-break: break-word; padding: 16px; margin: 20px 0px;">
+      <div class="form-group" id="claimant_last_name_group">
+        <label for="claimant_last_name">Claimant Last Name <span class="text-danger">*</span></label>
+        <input type="text" class="form-control" id="claimant_last_name" name="claimant_last_name"
+          style="border: 1px solid rgba(58, 98, 175, 1);" />
+      </div>
+      <div class="form-group">
+        <label for="claimaint_gender">Gender</label>
+        <select name="claimaint_gender" class="form-control" id="claimaint_gender"
+          style="border: 1px solid rgba(58, 98, 175, 1);">
+          <option value="Male">Male</option>
+          <option value="Female">Female</option>
+          <option value="Other">Other</option>
+        </select>
+      </div>
+      <div class="form-group" id="claimant_other_confirmation_container" style="display:none">
+        <label for="claimant_other_confirmation_id_type">Other Confirmation ID Type</label>
+        <input type="text" id="claimant_other_confirmation_id_type" value="0" name="claimant_other_confirmation_id_type"
+               class="form-control" style="border: 1px solid rgba(58, 98, 175, 1);" />
+    </div>
+      <div class="form-group">
+        <label for="type_of_assessment">Type of Assessment</label>
+        <select name="type_of_assessment" id="type_of_assessment" class="form-control"
+          style="border: 1px solid rgba(58, 98, 175, 1);">
+          <option value="In-Person">In-Person</option>
+          <option value="Virtual">Virtual</option>
+          <option value="File Review">File Review</option>
+          <option value="Addendum">Addendum</option>
+          <option value="Executive Summary">Executive Summary</option>
+        </select>
+      </div>
+      <div class="form-group" id="duration_of_Assessment_group"><label for="duration_of_Assessment">Duration of Assessment <span class="text-danger">*</span></label>
+        <input type="text" id="duration_of_Assessment" name="duration_of_Assessment" class="form-control"
+          style="border: 1px solid rgba(58, 98, 175, 1);" />
+      </div>
+      <div class="form-group" id="benefit_address_group">
+        <label for="benefit_address">Benefit Address <span class="text-danger">*</span></label>
+        <select name="benefit_address" id="benefit_address" class="form-control" multiple
+          style="border: 1px solid rgba(58, 98, 175, 1);">
+          <option value="Not Applicable">Not Applicable</option>
+          <option value="Medical Rehabilitation Benefits (MRB)">Medical Rehabilitation Benefits (MRB)</option>
+          <option value="Income Replacement Benefits (IRB)">Income Replacement Benefits (IRB)</option>
+          <option value="Non-Earner Benefits (NEB)">Non-Earner Benefits (NEB)</option>
+          <option value="Attendant Care Benefits">Attendant Care Benefits</option>
+          <option value="Post-104 Income Replacement Benefits">Post-104 Income Replacement Benefits</option>
+          <option value="Post-104 Caregiving Benefits">Post-104 Caregiving Benefits</option>
+          <option value="Caregiving Benefits">Caregiving Benefits</option>
+          <option value="Housekeeping and Home Maintenance Benefits">Housekeeping and Home Maintenance Benefits</option>
+          <option value="Catastrophic Impairment Determination">Catastrophic Impairment Determination</option>
+        </select>
+      </div>
+      <div class="form-group" id="date_of_dispute_group" style="display: none;">
+        <label for="date_of_dispute">Date of Dispute</label>
+        <input type="date" name="date_of_dispute" id="date_of_dispute" class="form-control"
+               style="border: 1px solid rgba(58, 98, 175, 1);" />
+    </div>
+      <div class="form-group" id="date_of_report_group"><label for="date_of_report">Date of Report <span class="text-danger">*</span></label>
+        <input type="date" name="date_of_report" id="date_of_report" class="form-control"
+          style="border: 1px solid rgba(58, 98, 175, 1);" />
+      </div>
+      <div class="form-group">
+        <label for="generated_report_as">Generated Report As</label>
+        <select name="generated_report_as"   class="form-control" id="generated_report_as"
+          style="border: 1px solid rgba(58, 98, 175, 1);">
+          <option value="Third Person">Third Person</option>
+          <option value="First Person">First Person</option>
+        </select>
+      </div>
+      <div class="form-group" id="Transcription/Notes_group"><label for="file">Upload File <span class="text-danger">*</span></label>
+        <input type="file" name="Transcription/Notes" id="Transcription/Notes" accept=".docx" class="form-control-file" style="margin-top: 10px;" /></div>
+    </div>
+    <div class="col-md-4 columnBlockLayout"
+      style="flex-grow: 1; display: flex; flex-direction: column; min-width: 250px; word-break: break-word; padding: 16px; margin: 20px 0px;">
+      <div class="form-group" id="date_of_birth_group"><label for="date_of_birth">Date of birth <span class="text-danger">*</span></label>
+        <input type="date" class="form-control" name="date_of_birth" id="date_of_birth"
+          style="border: 1px solid rgba(58, 98, 175, 1);" />
+      </div>
+      <div class="form-group" id="date_of_loss_group"><label for="date_of_loss">Date of Loss <span class="text-danger">*</span></label>
+        <input type="date" class="form-control" name="date_of_loss" id="date_of_loss"
+          style="border: 1px solid rgba(58, 98, 175, 1);" />
+      </div>
+      <div class="form-group"><label for="Id_number">ID Number </label>
+        <input type="text" class="form-control" name="Id_number" id="Id_number"
+          style="border: 1px solid rgba(58, 98, 175, 1);" />
+      </div>
+      <div class="form-group" id="date_of_assessment_group"><label for="date_of_assessment">Date of Assessment <span class="text-danger">*</span></label>
+        <input type="date" class="form-control" name="date_of_assessment" id="date_of_assessment"
+          style="border: 1px solid rgba(58, 98, 175, 1);" />
+      </div>
+      <div class="form-group">
+        <label for="vendor_company">Vendor Company</label>
+        <select name="vendor_company" id="vendor_company" class="form-control"
+          style="border: 1px solid rgba(58, 98, 175, 1);">
+          <!-- <option value="Axia Health">Axia Health</option> -->
+
+        </select>
+      </div>
+      <div class="form-group" id="additional_item_to_address_group">
+        <label for="additional_item_to_address">Additional Item to Address <span class="text-danger">*</span></label>
+        <select name="additional_item_to_address" id="additional_item_to_address" class="form-control"
+          style="border: 1px solid rgba(58, 98, 175, 1);" multiple>
+          <option value="Not Applicable">Not Applicable</option>
+          <option value="Minor Injury Guideline (MIG)">Minor Injury Guideline (MIG)</option>
+          <option value="Medications">Medications</option>
+          <option value="Transportation">Transportation</option>
+          <option value="Medical Marijuana OCF18 & OCF6">Medical Marijuana OCF18 & OCF6</option>
+          <option value="Driver’s Rehabilitation OCF-18">Drivers Rehabilitation OCF-18</option>
+          <option value="Functional Imaging (Non-CAT) OCF-18">Functional Imaging (Non-CAT) OCF-18</option>
+          <option value="Functional Imaging (CAT) OCF-18">Functional Imaging (CAT) OCF-18</option>
+          <option value="Section 25 CAT Assessments (OCF-18 for OCF-19)">Section 25 CAT Assessments (OCF-18 for OCF-19)
+          </option>
+        </select>
+      </div>
+      <div class="form-group" id="price_of_dispute_group" style="display: none;">
+        <label for="price_of_dispute">Price of Dispute</label>
+        <input id="price_of_dispute" name="price_of_dispute" type="number"  class="form-control" min="0"
+               style="border: 1px solid rgba(58, 98, 175, 1);" />
+    </div>
+      <div class="form-group" id="first_and_last_name_of_referral_source_group"><label for="first_and_last_name_of_referral_source">First and Last Name of Referral
+          Source <span class="text-danger">*</span></label>
+        <input type="text" id="first_and_last_name_of_referral_source" name="first_and_last_name_of_referral_source"
+          class="form-control" style="border: 1px solid rgba(58, 98, 175, 1); " />
+      </div>
+      <div class="form-group"><label for="intake_assistant_present">Was an Intake Assistant
+          Present for the Assessment</label>
+        <select name="intake_assistant_present"
+          id="intake_assistant_present" class="form-control"
+          style="border: 1px solid rgba(58, 98, 175, 1);">
+          <option value="Yes">Yes</option>
+          <option value="No">No</option>
+        </select>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="container"
+  style="padding: 0; display: flex; justify-content: flex-end; margin-bottom: 10px; margin-left: 5px;">
+  <button class="NextButton" id="NextButton"
+    style="padding: 10px 20px; color: white; background-color: rgba(58, 98, 175, 1); border: none; border-radius: 20px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); cursor: pointer; font-size: 16px;">
+    Next
+  </button>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mammoth/1.6.0/mammoth.browser.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.5.0/dist/css/bootstrap.min.css">

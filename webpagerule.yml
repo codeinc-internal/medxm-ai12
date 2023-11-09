@@ -1,0 +1,19 @@
+- adx_name: Restrict Read on Home
+  adx_right: 2
+  adx_scope: 2
+  adx_webpageaccesscontrolrule_webrole:
+  - d8a521a9-3277-ee11-8179-0022483cd1bd
+  adx_webpageaccesscontrolruleid: 12377910-61b6-800a-4982-23245bb8dea9
+  adx_webpageid: cfa521a9-3277-ee11-8179-0022483cd1bd
+- adx_name: Grant Change to Administrators
+  adx_right: 1
+  adx_scope: 1
+  adx_webpageaccesscontrolrule_webrole:
+  - d9a521a9-3277-ee11-8179-0022483cd1bd
+  adx_webpageaccesscontrolruleid: d5a521a9-3277-ee11-8179-0022483cd1bd
+  adx_webpageid: cfa521a9-3277-ee11-8179-0022483cd1bd
+- adx_name: Grant Change to Content
+  adx_right: 1
+  adx_scope: 1
+  adx_webpageaccesscontrolrule_webrole: []
+  adx_webpageaccesscontrolruleid: d6a521a9-3277-ee11-8179-0022483cd1bd

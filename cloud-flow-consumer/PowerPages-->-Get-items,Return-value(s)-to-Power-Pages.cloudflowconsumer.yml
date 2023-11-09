@@ -1,0 +1,16 @@
+adx_cloudflowconsumer_adx_webrole:
+- d8a521a9-3277-ee11-8179-0022483cd1bd
+- d9a521a9-3277-ee11-8179-0022483cd1bd
+adx_cloudflowconsumerid: 6acbd9b6-2c7a-ee11-8179-0022483cd1bd
+adx_flowapiurl: https://medxm-ai12.powerappsportals.com/_api/cloudflow/v1.0/trigger/17b87565-e3e5-c701-5b8d-6a3fffe11bdb
+adx_flowtriggerurl: https://canada-001.azure-apim.net:443/apim/logicflows/17B87565E3E5C7015B8D6A3FFFE11BDB-ED2036D4C673F36E/triggers/manual/run?api-version=2016-06-01
+adx_metadata: 17b87565-e3e5-c701-5b8d-6a3fffe11bdb
+adx_name: PowerPages -> Get items,Return value(s) to Power Pages
+adx_processid: 0838f389-2c7a-ee11-8179-0022483cd1bd
+createdby: bf63fd02-4775-ee11-8179-0022483d019b
+createdon: 2023-11-03T09:38:17.0000000Z
+modifiedby: bf63fd02-4775-ee11-8179-0022483d019b
+ownerid: bf63fd02-4775-ee11-8179-0022483d019b
+owningbusinessunit: cd5cfd02-4775-ee11-8179-0022483d019b
+owninguser: bf63fd02-4775-ee11-8179-0022483d019b
+versionnumber: 1667763
